@@ -1,5 +1,3 @@
-<img src="https://raw.githubusercontent.com/ehmicky/design/master/precise-now/precise-now.svg?sanitize=true" width="400"/>
-
 [![Codecov](https://img.shields.io/codecov/c/github/ehmicky/precise-now.svg?label=tested&logo=codecov)](https://codecov.io/gh/ehmicky/precise-now)
 [![Travis](https://img.shields.io/badge/cross-platform-4cc61e.svg?logo=travis)](https://travis-ci.org/ehmicky/precise-now)
 [![Node](https://img.shields.io/node/v/precise-now.svg?logo=node.js)](https://www.npmjs.com/package/precise-now)

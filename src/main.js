@@ -1,7 +1,7 @@
-// Retrieve the number of nanoseconds since the library was loaded.
+// Returns the number of nanoseconds since the library was loaded.
 // Meant to calculate time differences:
-//  - precise: use nanoseconds
-//  - accurate: does not use huge integers since those are not exact anymore
+//  - precisely: use nanoseconds instead of milliseconds
+//  - accurately: does not use huge integers since those are not exact anymore
 //    (when above `1e16`)
 //  - fast: use the fastest underlying method for the current platform
 //  - cross-platform: works on either Node.js or browsers
