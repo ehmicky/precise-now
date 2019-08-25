@@ -1,0 +1,47 @@
+{
+  "name": "precise-now",
+  "version": "0.0.1",
+  "main": "build/src/main.js",
+  "files": [
+    "build/src",
+    "examples",
+    "!~"
+  ],
+  "bin": {
+    "precise-now": "build/src/bin/main.js"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "gulp check --full"
+    }
+  },
+  "description": "Retrieve the current time precisely",
+  "keywords": [],
+  "license": "Apache-2.0",
+  "homepage": "https://git.io/fjxyQ",
+  "repository": "ehmicky/precise-now",
+  "bugs": {
+    "url": "https://github.com/ehmicky/precise-now/issues"
+  },
+  "author": "ehmicky <ehmicky@gmail.com> (https://github.com/ehmicky)",
+  "directories": {
+    "doc": "docs",
+    "lib": "src",
+    "test": "test"
+  },
+  "dependencies": {
+    "core-js": "^3.2.1"
+  },
+  "devDependencies": {
+    "ava": "^2.3.0",
+    "gulp": "^4.0.2",
+    "gulp-shared-tasks": "^0.30.38",
+    "husky": "^3.0.4"
+  },
+  "engines": {
+    "node": ">=8.12.0"
+  }
+}
