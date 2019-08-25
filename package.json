@@ -7,9 +7,6 @@
     "examples",
     "!~"
   ],
-  "bin": {
-    "precise-now": "build/src/bin/main.js"
-  },
   "scripts": {
     "test": "gulp test"
   },
