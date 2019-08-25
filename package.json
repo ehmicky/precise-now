@@ -1,6 +1,6 @@
 {
   "name": "precise-now",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "build/src/main.js",
   "files": [
     "build/src",
