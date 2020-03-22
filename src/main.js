@@ -33,7 +33,7 @@
 //      - slightly slower than `hrtime()` but simpler to manipulate
 /* eslint-disable no-restricted-globals, node/prefer-global/process, no-undef */
 // eslint-disable-next-line import/unambiguous
-const getNowFunc = function() {
+const getNowFunc = function () {
   if (process !== undefined) {
     return hrtime.bind(null, process.hrtime())
   }
@@ -45,7 +45,7 @@ const getNowFunc = function() {
   return dateNow.bind(null, Date.now())
 }
 
-const hrtime = function(start) {
+const hrtime = function (start) {
   const end = process.hrtime()
   return (end[0] - start[0]) * NANOSECS_TO_SECS + end[1] - start[1]
 }
@@ -55,14 +55,14 @@ const hrtime = function(start) {
 //   return Number(process.hrtime.bigint() - start)
 // }
 
-const performanceNow = function(start) {
+const performanceNow = function (start) {
   return Math.round((performance.now() - start) * NANOSECS_TO_MILLISECS)
 }
 
 // We make `Date.now()` relative to process start instead of Epoch so that the
 // returned number is much smaller. Otherwise the returned integer is over
 // `MAX_SAFE_INTEGER`.
-const dateNow = function(start) {
+const dateNow = function (start) {
   return (Date.now() - start) * NANOSECS_TO_MILLISECS
 }
 

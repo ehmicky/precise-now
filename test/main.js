@@ -6,13 +6,13 @@ import now from '../src/main.js'
 
 const pSetTimeout = promisify(setTimeout)
 
-test('Returns an integer', t => {
+test('Returns an integer', (t) => {
   const time = now()
 
   t.true(Number.isInteger(time))
 })
 
-test('Returns the time since the library was loaded', t => {
+test('Returns the time since the library was loaded', (t) => {
   const time = now()
 
   t.true(time < LOADED_TIME_THRESHOLD)
@@ -20,7 +20,7 @@ test('Returns the time since the library was loaded', t => {
 
 const LOADED_TIME_THRESHOLD = 6e10
 
-test('Returns the time in nanoseconds', async t => {
+test('Returns the time in nanoseconds', async (t) => {
   const start = now()
 
   await pSetTimeout(TIMEOUT_MILLESECS)
