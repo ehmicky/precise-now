@@ -1,5 +1,5 @@
-import { hrtime } from 'process'
 import { performance } from 'perf_hooks'
+import { hrtime } from 'process'
 
 export const tasks = [
   {
