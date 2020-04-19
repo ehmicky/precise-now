@@ -35,14 +35,14 @@
 // eslint-disable-next-line import/unambiguous
 const getNowFunc = function () {
   if (process !== undefined) {
-    return hrtime.bind(null, process.hrtime())
+    return hrtime.bind(undefined, process.hrtime())
   }
 
   if (performance !== undefined) {
-    return performanceNow.bind(null, performance.now())
+    return performanceNow.bind(undefined, performance.now())
   }
 
-  return dateNow.bind(null, Date.now())
+  return dateNow.bind(undefined, Date.now())
 }
 
 const hrtime = function (start) {
