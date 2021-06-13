@@ -32,8 +32,7 @@
 //      - bigint (nanoseconds)
 //      - slightly slower than `hrtime()` but simpler to manipulate
 /* eslint-disable no-restricted-globals, node/prefer-global/process, no-undef */
-// eslint-disable-next-line import/no-default-export
-export default function getNowFunc() {
+const nowFunc = function () {
   if (process !== undefined) {
     return hrtime.bind(undefined, process.hrtime())
   }
@@ -68,4 +67,7 @@ const dateNow = function (start) {
 
 const NANOSECS_TO_SECS = 1e9
 const NANOSECS_TO_MILLISECS = 1e6
+
+// eslint-disable-next-line import/no-default-export
+export default nowFunc()
 /* eslint-enable no-restricted-globals, node/prefer-global/process, no-undef */
