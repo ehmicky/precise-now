@@ -32,8 +32,8 @@
 //      - bigint (nanoseconds)
 //      - slightly slower than `hrtime()` but simpler to manipulate
 /* eslint-disable no-restricted-globals, node/prefer-global/process, no-undef */
-// eslint-disable-next-line import/unambiguous
-const getNowFunc = function () {
+// eslint-disable-next-line import/no-default-export
+export default function getNowFunc() {
   if (process !== undefined) {
     return hrtime.bind(undefined, process.hrtime())
   }
@@ -68,8 +68,4 @@ const dateNow = function (start) {
 
 const NANOSECS_TO_SECS = 1e9
 const NANOSECS_TO_MILLISECS = 1e6
-
-// We do not use `export default` because Babel transpiles it in a way that
-// requires CommonJS users to `require(...).default` instead of `require(...)`.
-module.exports = getNowFunc()
 /* eslint-enable no-restricted-globals, node/prefer-global/process, no-undef */
