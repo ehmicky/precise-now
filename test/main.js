@@ -1,8 +1,8 @@
 import { promisify } from 'util'
 
 import test from 'ava'
-
-import now from '../src/main.js'
+// eslint-disable-next-line node/no-extraneous-import
+import now from 'precise-now'
 
 // TODO: replace with `timers/promises` `setTimeout()` after dropping support
 // for Node <15.0.0
