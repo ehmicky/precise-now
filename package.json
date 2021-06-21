@@ -10,11 +10,6 @@
   "scripts": {
     "test": "gulp test"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "gulp -LL check --full"
-    }
-  },
   "description": "Retrieve the current time precisely",
   "keywords": [],
   "license": "Apache-2.0",
