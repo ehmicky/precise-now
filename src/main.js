@@ -68,6 +68,5 @@ const dateNow = function (start) {
 const NANOSECS_TO_SECS = 1e9
 const NANOSECS_TO_MILLISECS = 1e6
 
-// eslint-disable-next-line import/no-default-export
 export default nowFunc()
 /* eslint-enable no-restricted-globals, node/prefer-global/process, no-undef */
