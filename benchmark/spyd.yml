@@ -1,0 +1,9 @@
+titles:
+  hrtime: process.hrtime()
+  hrtimeBig: process.hrtime.bigint()
+  performanceNow: performance.now()
+  dateNow: Date.now()
+  dateGetTime: new Date().getTime()
+  dateNumber: Number(new Date())
+precision: 4
+reporter: boxplot
