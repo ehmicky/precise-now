@@ -31,7 +31,7 @@
 //      - duration since machine was started
 //      - bigint (nanoseconds)
 //      - slightly slower than `hrtime()` but simpler to manipulate
-/* eslint-disable no-restricted-globals, node/prefer-global/process */
+/* eslint-disable no-restricted-globals, n/prefer-global/process */
 const nowFunc = function () {
   if (process !== undefined) {
     return hrtime.bind(undefined, process.hrtime())
@@ -69,4 +69,4 @@ const NANOSECS_TO_SECS = 1e9
 const NANOSECS_TO_MILLISECS = 1e6
 
 export default nowFunc()
-/* eslint-enable no-restricted-globals, node/prefer-global/process */
+/* eslint-enable no-restricted-globals, n/prefer-global/process */
