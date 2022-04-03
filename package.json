@@ -26,7 +26,7 @@
     "test": "test"
   },
   "devDependencies": {
-    "@ehmicky/dev-tasks": "^1.0.68",
+    "@ehmicky/dev-tasks": "^1.0.70",
     "spyd": "^0.4.0"
   },
   "engines": {
