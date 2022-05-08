@@ -6,4 +6,4 @@ titles:
   dateGetTime: new Date().getTime()
   dateNumber: Number(new Date())
 precision: 9
-reporter: boxplot
+reporter: debug
