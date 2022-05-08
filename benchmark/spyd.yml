@@ -5,5 +5,5 @@ titles:
   dateNow: Date.now()
   dateGetTime: new Date().getTime()
   dateNumber: Number(new Date())
-precision: 4
+precision: 9
 reporter: boxplot
