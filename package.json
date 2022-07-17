@@ -1,6 +1,6 @@
 {
   "name": "precise-now",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "type": "module",
   "exports": "./build/src/main.js",
   "main": "./build/src/main.js",
