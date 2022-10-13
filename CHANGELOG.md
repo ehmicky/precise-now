@@ -1,3 +1,7 @@
+# 0.4.3
+
+- Switch to MIT license
+
 # 0.4.2
 
 ## Features
