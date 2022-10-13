@@ -15,7 +15,7 @@
   "keywords": [
     "typescript"
   ],
-  "license": "Apache-2.0",
+  "license": "MIT",
   "homepage": "https://www.github.com/ehmicky/precise-now",
   "repository": "ehmicky/precise-now",
   "bugs": {
