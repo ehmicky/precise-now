@@ -1,6 +1,6 @@
 {
   "name": "precise-now",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "type": "module",
   "exports": {
     "types": "./build/types/main.d.ts",
