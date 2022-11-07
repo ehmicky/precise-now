@@ -1,3 +1,9 @@
+# 0.4.5
+
+## Features
+
+- Add browser support
+
 # 0.4.4
 
 ## Bug fixes
