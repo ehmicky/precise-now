@@ -8,24 +8,18 @@ import now from 'precise-now'
 const pSetTimeout = promisify(setTimeout)
 
 test('Returns an integer', (t) => {
-  const time = now()
-
-  t.true(Number.isInteger(time))
+  t.true(Number.isInteger(now()))
 })
 
 test('Returns the time since the library was loaded', (t) => {
-  const time = now()
-
-  t.true(time < LOADED_TIME_THRESHOLD)
+  t.true(now() < LOADED_TIME_THRESHOLD)
 })
 
 const LOADED_TIME_THRESHOLD = 6e10
 
 test('Returns the time in nanoseconds', async (t) => {
   const start = now()
-
   await pSetTimeout(TIMEOUT_MILLESECS)
-
   const duration = now() - start
 
   t.true(duration > TIMEOUT_MIN)

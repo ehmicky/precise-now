@@ -59,9 +59,6 @@ const performanceNow = function (start) {
   return Math.round((performance.now() - start) * NANOSECS_TO_MILLISECS)
 }
 
-// We make `Date.now()` relative to process start instead of Epoch so that the
-// returned number is much smaller. Otherwise the returned integer is over
-// `MAX_SAFE_INTEGER`.
 const dateNow = function (start) {
   return (Date.now() - start) * NANOSECS_TO_MILLISECS
 }
