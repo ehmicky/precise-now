@@ -14,7 +14,12 @@ export const removePerformanceNow = function () {
   performance.now = undefined
 
   if (globalThis?.performance?.now !== undefined) {
-    // eslint-disable-next-line fp/no-mutation
-    globalThis.performance.now = undefined
+    // eslint-disable-next-line fp/no-mutating-methods
+    Object.defineProperty(globalThis.performance, 'now', {
+      value: undefined,
+      enumerable: true,
+      writable: true,
+      configurable: true,
+    })
   }
 }
