@@ -48,6 +48,9 @@ Return the number of nanoseconds since the
 
 # Related projects
 
+- [`time-resolution`](https://github.com/ehmicky/time-resolution): Find the
+  system's time resolution
+
 # Support
 
 For any question, _don't hesitate_ to [submit an issue on GitHub](../../issues).
