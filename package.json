@@ -16,7 +16,7 @@
   "scripts": {
     "test": "gulp test"
   },
-  "description": "Retrieve the current time precisely",
+  "description": "Like `performance.now()` but in nanoseconds.",
   "keywords": [
     "typescript"
   ],

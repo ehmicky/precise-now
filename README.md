@@ -15,6 +15,39 @@ Although the value is always in nanoseconds, the
 precise. For example, in Node.js, it is 1ns, but in Firefox it is 1ms and in
 Chrome it is 0.1ms.
 
+# Example
+
+```js
+import preciseNow from 'precise-now'
+
+const start = preciseNow()
+const end = preciseNow()
+const duration = end - start
+```
+
+# Install
+
+```bash
+npm install template-name
+```
+
+This package works in both Node.js >=14.18.0 and
+[browsers](https://raw.githubusercontent.com/ehmicky/dev-tasks/main/src/tasks/build/browserslist).
+It is an ES module and must be loaded using
+[an `import` or `import()` statement](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c),
+not `require()`.
+
+# API
+
+## preciseNow()
+
+_Return value_: `number`
+
+Return the number of nanoseconds since the
+[time origin](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp#the_time_origin).
+
+# Related projects
+
 # Support
 
 For any question, _don't hesitate_ to [submit an issue on GitHub](../../issues).
