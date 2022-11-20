@@ -18,6 +18,10 @@
   },
   "description": "Like `performance.now()` but in nanoseconds.",
   "keywords": [
+    "browsers",
+    "nodejs",
+    "javascript",
+    "library",
     "typescript"
   ],
   "license": "MIT",
