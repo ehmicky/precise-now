@@ -22,23 +22,19 @@
 //      - in Node, it is built on top of `hrtime()`. It converts it to
 //        milliseconds, while leads to rounding errors, as opposed to keeping
 //        and manipulating the seconds and nanoseconds fields separately.
-//   - `hrtime()`:
+//   - `hrtime[.bigint]()`:
 //      - Node only
 //      - duration since machine was started
-//      - array of two integers (seconds and nanoseconds)
-//   - `hrtime.bigint()`:
-//      - Node only
-//      - duration since machine was started
-//      - bigint (nanoseconds)
-//      - slightly slower than `hrtime()` but simpler to manipulate
+//      - nanoseconds
 const nowFunc = function () {
-  if ('process' in globalThis) {
+  // eslint-disable-next-line n/prefer-global/process
+  if (globalThis?.process?.hrtime?.bigint !== undefined) {
     // eslint-disable-next-line n/prefer-global/process
-    return hrtime.bind(undefined, globalThis.process.hrtime())
+    return hrtime.bind(undefined, globalThis.process.hrtime.bigint())
   }
 
-  if (performance !== undefined) {
-    return performanceNow.bind(undefined, performance.now())
+  if (globalThis?.performance?.now !== undefined) {
+    return performanceNow.bind(undefined, globalThis.performance.now())
   }
 
   return dateNow.bind(undefined, Date.now())
@@ -46,24 +42,19 @@ const nowFunc = function () {
 
 const hrtime = function (start) {
   // eslint-disable-next-line n/prefer-global/process
-  const end = globalThis.process.hrtime()
-  return (end[0] - start[0]) * NANOSECS_TO_SECS + end[1] - start[1]
+  return Number(globalThis.process.hrtime.bigint() - start)
 }
 
-// `hrtime()` is always faster than `hrtime.bigint()` at the moment
-// const hrtimeBigint = function(start) {
-//   return Number(process.hrtime.bigint() - start)
-// }
-
 const performanceNow = function (start) {
-  return Math.round((performance.now() - start) * NANOSECS_TO_MILLISECS)
+  return Math.round(
+    (globalThis.performance.now() - start) * NANOSECS_TO_MILLISECS,
+  )
 }
 
 const dateNow = function (start) {
   return (Date.now() - start) * NANOSECS_TO_MILLISECS
 }
 
-const NANOSECS_TO_SECS = 1e9
 const NANOSECS_TO_MILLISECS = 1e6
 
 export default nowFunc()

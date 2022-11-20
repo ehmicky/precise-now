@@ -1,3 +1,4 @@
+// eslint-disable-next-line ava/no-ignored-test-files
 import { promisify } from 'node:util'
 
 import test from 'ava'
