@@ -1,3 +1,7 @@
+# 1.0.0
+
+First stable release. No breaking changes.
+
 # 0.4.6
 
 ## Features
