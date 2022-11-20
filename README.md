@@ -6,9 +6,14 @@
 [![Mastodon](https://img.shields.io/badge/-Mastodon-808080.svg?logo=mastodon&colorA=404040&logoColor=9590F9)](https://fosstodon.org/@ehmicky)
 [![Medium](https://img.shields.io/badge/-Medium-808080.svg?logo=medium&colorA=404040)](https://medium.com/@ehmicky)
 
-Retrieve the current time precisely.
+Like
+[`performance.now()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now)
+but in nanoseconds.
 
-Work in progress!
+Although the value is always in nanoseconds, the
+[time resolution](https://github.com/ehmicky/time-resolution) might be less
+precise. For example, in Node.js, it is 1ns, but in Firefox it is 1ms and in
+Chrome it is 0.1ms.
 
 # Support
 
