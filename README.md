@@ -28,7 +28,7 @@ const duration = end - start
 # Install
 
 ```bash
-npm install template-name
+npm install precise-now
 ```
 
 This package works in both Node.js >=14.18.0 and
