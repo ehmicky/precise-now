@@ -1,4 +1,4 @@
-import { removeHrtime } from './helpers/remove.js'
+import { removeHrtime } from './helpers/remove.test.js'
 
 removeHrtime()
-await import('./helpers/tests.js')
+await import('./helpers/tests.test.js')

@@ -1,2 +1,2 @@
 // eslint-disable-next-line import/no-unassigned-import
-import './helpers/tests.js'
+import './helpers/tests.test.js'

@@ -1,5 +1,5 @@
-import { removeHrtime, removePerformanceNow } from './helpers/remove.js'
+import { removeHrtime, removePerformanceNow } from './helpers/remove.test.js'
 
 removeHrtime()
 removePerformanceNow()
-await import('./helpers/tests.js')
+await import('./helpers/tests.test.js')
