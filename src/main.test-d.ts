@@ -1,6 +1,7 @@
-import { expectType, expectError } from 'tsd'
+import { expectType } from 'tsd'
 
 import preciseNow from 'precise-now'
 
 expectType<number>(preciseNow())
-expectError(preciseNow(1))
+// @ts-expect-error
+preciseNow(1)
