@@ -1,3 +1,9 @@
+# 1.1.0
+
+## Documentation
+
+- Improve documentation
+
 # 1.0.0
 
 First stable release. No breaking changes.
