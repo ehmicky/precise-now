@@ -38,6 +38,16 @@ const nowFunc = () => {
   return dateNow.bind(undefined, Date.now())
 }
 
+const hrtime = (start: bigint) =>
+  Number(globalThis.process.hrtime.bigint() - start)
+
+const performanceNow = (start: number) =>
+  Math.round((globalThis.performance.now() - start) * NANOSECS_TO_MILLISECS)
+
+const dateNow = (start: number) => (Date.now() - start) * NANOSECS_TO_MILLISECS
+
+const NANOSECS_TO_MILLISECS = 1e6
+
 /**
  * Return the number of nanoseconds since the time origin.
  *
@@ -51,14 +61,4 @@ const nowFunc = () => {
 const preciseNow = nowFunc()
 
 export default preciseNow
-
-const hrtime = (start: bigint) =>
-  Number(globalThis.process.hrtime.bigint() - start)
-
-const performanceNow = (start: number) =>
-  Math.round((globalThis.performance.now() - start) * NANOSECS_TO_MILLISECS)
-
-const dateNow = (start: number) => (Date.now() - start) * NANOSECS_TO_MILLISECS
-
-const NANOSECS_TO_MILLISECS = 1e6
 /* eslint-enable @typescript-eslint/no-unnecessary-condition, n/prefer-global/process */
