@@ -21,9 +21,11 @@ export const dateNow = () => {
 }
 
 export const dateGetTime = () => {
+  // eslint-disable-next-line unicorn/prefer-date-now
   new Date().getTime()
 }
 
 export const dateNumber = () => {
+  // eslint-disable-next-line unicorn/prefer-date-now
   Number(new Date())
 }
