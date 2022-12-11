@@ -1,4 +1,4 @@
-// Returns the number of nanoseconds since the library was loaded.
+/* eslint-disable @typescript-eslint/no-unnecessary-condition, n/prefer-global/process */
 // Meant to calculate time differences:
 //  - precisely: use nanoseconds instead of milliseconds
 //  - accurately: does not use huge integers since those are not exact anymore
@@ -27,9 +27,7 @@
 //      - duration since machine was started
 //      - nanoseconds
 const nowFunc = () => {
-  // eslint-disable-next-line n/prefer-global/process
   if (globalThis?.process?.hrtime?.bigint !== undefined) {
-    // eslint-disable-next-line n/prefer-global/process
     return hrtime.bind(undefined, globalThis.process.hrtime.bigint())
   }
 
@@ -40,14 +38,25 @@ const nowFunc = () => {
   return dateNow.bind(undefined, Date.now())
 }
 
-// eslint-disable-next-line n/prefer-global/process
-const hrtime = (start) => Number(globalThis.process.hrtime.bigint() - start)
+const hrtime = (start: bigint) =>
+  Number(globalThis.process.hrtime.bigint() - start)
 
-const performanceNow = (start) =>
+const performanceNow = (start: number) =>
   Math.round((globalThis.performance.now() - start) * NANOSECS_TO_MILLISECS)
 
-const dateNow = (start) => (Date.now() - start) * NANOSECS_TO_MILLISECS
+const dateNow = (start: number) => (Date.now() - start) * NANOSECS_TO_MILLISECS
 
 const NANOSECS_TO_MILLISECS = 1e6
 
+/**
+ * Return the number of nanoseconds since the time origin.
+ *
+ * @example
+ * ```js
+ * const start = preciseNow()
+ * const end = preciseNow()
+ * const duration = end - start
+ * ```
+ */
 export default nowFunc()
+/* eslint-enable @typescript-eslint/no-unnecessary-condition, n/prefer-global/process */
