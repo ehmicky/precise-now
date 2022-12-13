@@ -4,26 +4,26 @@
 import { performance } from 'node:perf_hooks'
 import process from 'node:process'
 
-export const hrtime = function () {
+export const hrtime = () => {
   process.hrtime()
 }
 
-export const hrtimeBig = function () {
+export const hrtimeBig = () => {
   process.hrtime.bigint()
 }
 
-export const performanceNow = function () {
+export const performanceNow = () => {
   performance.now()
 }
 
-export const dateNow = function () {
+export const dateNow = () => {
   Date.now()
 }
 
-export const dateGetTime = function () {
+export const dateGetTime = () => {
   new Date().getTime()
 }
 
-export const dateNumber = function () {
+export const dateNumber = () => {
   Number(new Date())
 }

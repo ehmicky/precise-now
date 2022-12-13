@@ -26,7 +26,7 @@
 //      - Node only
 //      - duration since machine was started
 //      - nanoseconds
-const nowFunc = function () {
+const nowFunc = () => {
   // eslint-disable-next-line n/prefer-global/process
   if (globalThis?.process?.hrtime?.bigint !== undefined) {
     // eslint-disable-next-line n/prefer-global/process
@@ -40,20 +40,13 @@ const nowFunc = function () {
   return dateNow.bind(undefined, Date.now())
 }
 
-const hrtime = function (start) {
-  // eslint-disable-next-line n/prefer-global/process
-  return Number(globalThis.process.hrtime.bigint() - start)
-}
+// eslint-disable-next-line n/prefer-global/process
+const hrtime = (start) => Number(globalThis.process.hrtime.bigint() - start)
 
-const performanceNow = function (start) {
-  return Math.round(
-    (globalThis.performance.now() - start) * NANOSECS_TO_MILLISECS,
-  )
-}
+const performanceNow = (start) =>
+  Math.round((globalThis.performance.now() - start) * NANOSECS_TO_MILLISECS)
 
-const dateNow = function (start) {
-  return (Date.now() - start) * NANOSECS_TO_MILLISECS
-}
+const dateNow = (start) => (Date.now() - start) * NANOSECS_TO_MILLISECS
 
 const NANOSECS_TO_MILLISECS = 1e6
 

@@ -3,13 +3,13 @@
 import performance from 'node:perf_hooks'
 
 // Mimics browsers by removing Node.js specific API
-export const removeHrtime = function () {
+export const removeHrtime = () => {
   // eslint-disable-next-line fp/no-mutation, n/prefer-global/process
   globalThis.process.hrtime.bigint = undefined
 }
 
 // Mimics platforms without `performance.now()` by removing it
-export const removePerformanceNow = function () {
+export const removePerformanceNow = () => {
   // eslint-disable-next-line fp/no-mutation
   performance.now = undefined
 
