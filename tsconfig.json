@@ -1,5 +1,5 @@
 {
-  "extends": "@ehmicky/dev-tasks",
+  "extends": "@ehmicky/dev-tasks/tsconfig.json",
   "compilerOptions": {
     "lib": ["esnext", "dom"]
   }
