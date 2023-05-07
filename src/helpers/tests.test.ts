@@ -1,11 +1,7 @@
-import { promisify } from 'node:util'
+import { setTimeout } from 'node:timers/promises'
 
 import test from 'ava'
 import now from 'precise-now'
-
-// TODO: replace with `timers/promises` `setTimeout()` after dropping support
-// for Node <15.0.0
-const pSetTimeout = promisify(setTimeout)
 
 test('Returns an integer', (t) => {
   t.true(Number.isInteger(now()))
@@ -19,7 +15,7 @@ const LOADED_TIME_THRESHOLD = 6e10
 
 test('Returns the time in nanoseconds', async (t) => {
   const start = now()
-  await pSetTimeout(TIMEOUT_MILLESECS)
+  await setTimeout(TIMEOUT_MILLESECS)
   const duration = now() - start
 
   t.true(duration > TIMEOUT_MIN)
