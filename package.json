@@ -51,7 +51,7 @@
     "lib": "src"
   },
   "devDependencies": {
-    "@ehmicky/dev-tasks": "^2.0.79",
+    "@ehmicky/dev-tasks": "^2.0.80",
     "@types/node": "^18.15.3",
     "spyd": "^0.6.1"
   },
