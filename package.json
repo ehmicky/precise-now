@@ -42,7 +42,10 @@
   ],
   "license": "MIT",
   "homepage": "https://www.github.com/ehmicky/precise-now",
-  "repository": "ehmicky/precise-now",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehmicky/precise-now.git"
+  },
   "bugs": {
     "url": "https://github.com/ehmicky/precise-now/issues"
   },
