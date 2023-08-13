@@ -27,11 +27,11 @@
 //      - duration since machine was started
 //      - nanoseconds
 const nowFunc = () => {
-  if (globalThis?.process?.hrtime?.bigint !== undefined) {
+  if (globalThis.process?.hrtime?.bigint !== undefined) {
     return hrtime.bind(undefined, globalThis.process.hrtime.bigint())
   }
 
-  if (globalThis?.performance?.now !== undefined) {
+  if (globalThis.performance?.now !== undefined) {
     return performanceNow.bind(undefined, globalThis.performance.now())
   }
 
