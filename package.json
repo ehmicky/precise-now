@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@ehmicky/dev-tasks": "^2.0.93",
-    "@types/node": "^20.4.8",
+    "@types/node": "^20.5.3",
     "spyd": "^0.7.0"
   },
   "engines": {
