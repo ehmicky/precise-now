@@ -8,6 +8,7 @@ export const removeHrtime = () => {
 export const removePerformanceNow = () => {
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (globalThis?.performance?.now !== undefined) {
+    // eslint-disable-next-line fp/no-mutating-methods
     Object.defineProperty(globalThis.performance, 'now', {
       value: undefined,
       enumerable: true,
